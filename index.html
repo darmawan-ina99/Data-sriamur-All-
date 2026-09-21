@@ -55,6 +55,18 @@
     background: #fff;
     color: #000;
   }
+  #btnPdf {
+    margin-top: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #btnPdf:hover { background: #1a252f; }
   .note {
     margin-top: 12px;
     font-size: 12px;
@@ -145,20 +157,23 @@
       <td>16.966</td>
       <td>354</td>
       <td>17.320</td>
-      <td class="dpt"><input type="number" min="0" id="totalDPT" oninput="hitungTotal()" placeholder="isi total"></td>
+      <td class="dpt" id="totalDPT">-</td>
       <td class="abstain" id="totalAbstain">-</td>
     </tr>
   </tfoot>
 </table>
 </div>
 
+<button id="btnPdf" onclick="unduhPdf()">\u2913 Download PDF</button>
+
 <div class="note">
   <b>Rumus:</b> Abstain = DPT − (Suara Sah + Suara Tidak Sah).<br>
   Jika Anda mengisi DPT di baris TOTAL, maka nilai abstain total akan dihitung dari total DPT dikurangi total suara sah dan tidak sah.
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-  // Hitung abstain per baris
+  // Hitung abstain per baris + update total DPT otomatis
   function hitung(input) {
     const row = input.closest('tr');
     const sah = parseInt(row.cells[5].textContent.replace(/\./g, '')) || 0;
@@ -170,22 +185,40 @@
     else if (abstain < 0) abstain = 'cek DPT';
 
     row.querySelector('.abstain').textContent = abstain;
+    updateTotalDPT();
   }
 
-  // Hitung abstain total dari kolom total DPT
-  function hitungTotal() {
-    const totalDPT = parseInt(document.getElementById('totalDPT').value) || 0;
-    const totalSah = 16966;
-    const totalTidakSah = 354;
-    const el = document.getElementById('totalAbstain');
+  // Total DPT otomatis = jumlah semua DPT per TPS yang sudah diisi
+  function updateTotalDPT() {
+    const inputs = document.querySelectorAll('#tabelRekap tbody td.dpt input');
+    let totalDPT = 0, ada = false;
+    inputs.forEach(inp => {
+      if (inp.value !== '') { totalDPT += parseInt(inp.value) || 0; ada = true; }
+    });
 
-    if (document.getElementById('totalDPT').value === '') {
-      el.textContent = '-';
-      return;
-    }
+    const elDPT = document.getElementById('totalDPT');
+    const elAbstain = document.getElementById('totalAbstain');
+    if (!ada) { elDPT.textContent = '-'; elAbstain.textContent = '-'; return; }
+
+    elDPT.textContent = totalDPT.toLocaleString('id-ID');
+
+    const totalSah = 16966, totalTidakSah = 354;
     let abstain = totalDPT - (totalSah + totalTidakSah);
-    if (abstain < 0) abstain = 'cek DPT';
-    el.textContent = abstain;
+    elAbstain.textContent = abstain < 0 ? 'cek DPT' : abstain.toLocaleString('id-ID');
+  }
+
+  // Download PDF
+  function unduhPdf() {
+    const btn = document.getElementById('btnPdf');
+    btn.style.display = 'none';
+    const opt = {
+      margin: [5, 5, 5, 5],
+      filename: 'Rekap-Suara-TPS-Sriamur.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+    html2pdf().set(opt).from(document.body).save().then(() => { btn.style.display = ''; });
   }
 </script>
 
