@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekap Suara TPS</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+    color: #222;
+  }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  p.sub { margin-top: 0; color: #555; font-size: 13px; }
+  .table-wrap { overflow-x: auto; }
+  table {
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 1100px;
+    font-size: 13px;
+  }
+  th, td {
+    border: 1px solid #bbb;
+    padding: 5px 7px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  thead th {
+    background: #2c3e50;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+  thead tr.sub th { background: #34495e; font-size: 12px; }
+  tbody tr:nth-child(even) { background: #f9f9f9; }
+  tbody tr:hover { background: #eef6ff; }
+  td.dpt input {
+    width: 80px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  td.abstain { font-weight: bold; color: #b00; background: #fff5f5; }
+  td.total { font-weight: bold; background: #eef7ee; }
+  tfoot td {
+    background: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+  }
+  tfoot td.dpt input {
+    background: #fff;
+    color: #000;
+  }
+  .note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #555;
+    background: #fffbe6;
+    border-left: 4px solid #f0c000;
+    padding: 8px 12px;
+    max-width: 700px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Rekap Suara Per TPS</h1>
+<p class="sub">Kolom <b>DPT</b> diisi manual. Kolom <b>Abstain</b> otomatis = DPT − (Suara Sah + Suara Tidak Sah).</p>
+
+<div class="table-wrap">
+<table id="tabelRekap">
+  <thead>
+    <tr>
+      <th rowspan="2">TPS</th>
+      <th colspan="4">Perolehan Suara Kandidat</th>
+      <th rowspan="2">Suara Sah</th>
+      <th rowspan="2">Tidak Sah</th>
+      <th rowspan="2">Total</th>
+      <th rowspan="2">DPT</th>
+      <th rowspan="2">Abstain</th>
+    </tr>
+    <tr class="sub">
+      <th>1. Abdul Darip</th>
+      <th>2. H. Nurdin</th>
+      <th>3. Rosada</th>
+      <th>4. Masdi Enjin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TPS 01 - 26 dari halaman 1 -->
+    <tr><td>TPS 01</td><td>39</td><td>26</td><td>4</td><td>294</td><td>363</td><td>1</td><td>364</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 02</td><td>166</td><td>146</td><td>5</td><td>153</td><td>470</td><td>11</td><td>481</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 03</td><td>248</td><td>73</td><td>2</td><td>156</td><td>479</td><td>10</td><td>489</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 04</td><td>180</td><td>127</td><td>16</td><td>141</td><td>464</td><td>2</td><td>466</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 05</td><td>103</td><td>210</td><td>6</td><td>154</td><td>473</td><td>9</td><td>482</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 06</td><td>49</td><td>238</td><td>26</td><td>81</td><td>394</td><td>14</td><td>408</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 07</td><td>50</td><td>182</td><td>5</td><td>148</td><td>385</td><td>11</td><td>396</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 08</td><td>62</td><td>176</td><td>9</td><td>191</td><td>438</td><td>1</td><td>439</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 09</td><td>112</td><td>108</td><td>13</td><td>142</td><td>375</td><td>5</td><td>380</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 10</td><td>91</td><td>195</td><td>23</td><td>162</td><td>471</td><td>9</td><td>480</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 11</td><td>98</td><td>210</td><td>7</td><td>135</td><td>450</td><td>7</td><td>457</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 12</td><td>75</td><td>236</td><td>21</td><td>112</td><td>444</td><td>6</td><td>450</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 13</td><td>43</td><td>312</td><td>18</td><td>94</td><td>467</td><td>3</td><td>470</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 14</td><td>86</td><td>220</td><td>2</td><td>59</td><td>367</td><td>4</td><td>371</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 15</td><td>60</td><td>149</td><td>9</td><td>100</td><td>318</td><td>4</td><td>322</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 16</td><td>111</td><td>88</td><td>8</td><td>127</td><td>334</td><td>1</td><td>335</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 17</td><td>123</td><td>223</td><td>47</td><td>73</td><td>466</td><td>5</td><td>471</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 18</td><td>199</td><td>199</td><td>19</td><td>63</td><td>480</td><td>4</td><td>484</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 19</td><td>241</td><td>158</td><td>7</td><td>44</td><td>450</td><td>10</td><td>460</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 20</td><td>205</td><td>72</td><td>23</td><td>73</td><td>373</td><td>9</td><td>382</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 21</td><td>290</td><td>34</td><td>33</td><td>97</td><td>454</td><td>12</td><td>466</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 22</td><td>206</td><td>23</td><td>22</td><td>182</td><td>433</td><td>44</td><td>477</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 23</td><td>151</td><td>17</td><td>55</td><td>202</td><td>425</td><td>7</td><td>432</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 24</td><td>121</td><td>77</td><td>29</td><td>168</td><td>395</td><td>21</td><td>416</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 25</td><td>334</td><td>12</td><td>60</td><td>38</td><td>444</td><td>7</td><td>451</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 26</td><td>118</td><td>118</td><td>37</td><td>155</td><td>428</td><td>9</td><td>437</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+
+    <!-- TPS 27 - 40 dari halaman 2 -->
+    <tr><td>TPS 27</td><td>199</td><td>107</td><td>58</td><td>98</td><td>462</td><td>4</td><td>466</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 28</td><td>162</td><td>119</td><td>42</td><td>156</td><td>479</td><td>13</td><td>492</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 29</td><td>187</td><td>75</td><td>97</td><td>96</td><td>455</td><td>3</td><td>458</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 30</td><td>172</td><td>95</td><td>74</td><td>146</td><td>487</td><td>6</td><td>493</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 31</td><td>202</td><td>87</td><td>42</td><td>109</td><td>440</td><td>12</td><td>452</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 32</td><td>204</td><td>131</td><td>53</td><td>84</td><td>472</td><td>5</td><td>477</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 33</td><td>124</td><td>20</td><td>130</td><td>51</td><td>406</td><td>6</td><td>412</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 34</td><td>121</td><td>95</td><td>50</td><td>120</td><td>386</td><td>13</td><td>399</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 35</td><td>83</td><td>18</td><td>91</td><td>113</td><td>386</td><td>14</td><td>400</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 36</td><td>129</td><td>114</td><td>38</td><td>91</td><td>372</td><td>9</td><td>381</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 37</td><td>100</td><td>152</td><td>8</td><td>135</td><td>395</td><td>10</td><td>405</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 38</td><td>102</td><td>208</td><td>4</td><td>111</td><td>425</td><td>11</td><td>436</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 39</td><td>95</td><td>113</td><td>51</td><td>65</td><td>378</td><td>8</td><td>386</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+    <tr><td>TPS 40</td><td>137</td><td>95</td><td>91</td><td>42</td><td>383</td><td>14</td><td>397</td><td class="dpt"><input type="number" min="0" oninput="hitung(this)"></td><td class="abstain">-</td></tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>TOTAL</td>
+      <td>5.578</td>
+      <td>5.410</td>
+      <td>1.017</td>
+      <td>4.961</td>
+      <td>16.966</td>
+      <td>354</td>
+      <td>17.320</td>
+      <td class="dpt"><input type="number" min="0" id="totalDPT" oninput="hitungTotal()" placeholder="isi total"></td>
+      <td class="abstain" id="totalAbstain">-</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+<div class="note">
+  <b>Rumus:</b> Abstain = DPT − (Suara Sah + Suara Tidak Sah).<br>
+  Jika Anda mengisi DPT di baris TOTAL, maka nilai abstain total akan dihitung dari total DPT dikurangi total suara sah dan tidak sah.
+</div>
+
+<script>
+  // Hitung abstain per baris
+  function hitung(input) {
+    const row = input.closest('tr');
+    const sah = parseInt(row.cells[5].textContent.replace(/\./g, '')) || 0;
+    const tidakSah = parseInt(row.cells[6].textContent.replace(/\./g, '')) || 0;
+    const dpt = parseInt(input.value) || 0;
+
+    let abstain = dpt - (sah + tidakSah);
+    if (input.value === '') abstain = '-';
+    else if (abstain < 0) abstain = 'cek DPT';
+
+    row.querySelector('.abstain').textContent = abstain;
+  }
+
+  // Hitung abstain total dari kolom total DPT
+  function hitungTotal() {
+    const totalDPT = parseInt(document.getElementById('totalDPT').value) || 0;
+    const totalSah = 16966;
+    const totalTidakSah = 354;
+    const el = document.getElementById('totalAbstain');
+
+    if (document.getElementById('totalDPT').value === '') {
+      el.textContent = '-';
+      return;
+    }
+    let abstain = totalDPT - (totalSah + totalTidakSah);
+    if (abstain < 0) abstain = 'cek DPT';
+    el.textContent = abstain;
+  }
+</script>
+
+</body>
+  </html>
