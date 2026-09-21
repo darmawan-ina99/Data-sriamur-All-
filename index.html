@@ -168,10 +168,11 @@
 
 <div class="note">
   <b>Rumus:</b> Abstain = DPT − (Suara Sah + Suara Tidak Sah).<br>
-  Jika Anda mengisi DPT di baris TOTAL, maka nilai abstain total akan dihitung dari total DPT dikurangi total suara sah dan tidak sah.
+  Total DPT dan Abstain dihitung <b>otomatis</b> dari jumlah DPT per TPS yang sudah diisi. Data backup tersimpan di <code>data/rekap-suara.json</code>.
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <script>
   // Hitung abstain per baris + update total DPT otomatis
   function hitung(input) {
@@ -207,20 +208,56 @@
     elAbstain.textContent = abstain < 0 ? 'cek DPT' : abstain.toLocaleString('id-ID');
   }
 
-  // Download PDF
+  // Download PDF - tabel digenerate ulang sebagai tabel PDF asli,
+  // semua 40 TPS + TOTAL pasti terbaca, header ikut di tiap halaman
   function unduhPdf() {
-    const btn = document.getElementById('btnPdf');
-    btn.style.display = 'none';
-    const opt = {
-      margin: [5, 5, 5, 5],
-      filename: 'Rekap-Suara-TPS-Sriamur.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
-    };
-    html2pdf().set(opt).from(document.body).save().then(() => { btn.style.display = ''; });
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+
+    const body = [];
+    document.querySelectorAll('#tabelRekap tbody tr').forEach(tr => {
+      const c = tr.cells;
+      const inp = tr.querySelector('td.dpt input');
+      const dpt = inp && inp.value !== '' ? inp.value : '-';
+      body.push([c[0].textContent, c[1].textContent, c[2].textContent, c[3].textContent,
+                 c[4].textContent, c[5].textContent, c[6].textContent, c[7].textContent,
+                 dpt, tr.querySelector('.abstain').textContent]);
+    });
+
+    const f = document.querySelector('#tabelRekap tfoot tr');
+    const foot = [['TOTAL', f.cells[1].textContent, f.cells[2].textContent, f.cells[3].textContent,
+                   f.cells[4].textContent, f.cells[5].textContent, f.cells[6].textContent,
+                   f.cells[7].textContent,
+                   document.getElementById('totalDPT').textContent,
+                   document.getElementById('totalAbstain').textContent]];
+
+    doc.setFontSize(14);
+    doc.text('Rekap Suara Per TPS - Desa Sriamur', 10, 12);
+    doc.setFontSize(9);
+    doc.text('Dicetak: ' + new Date().toLocaleString('id-ID'), 10, 18);
+
+    doc.autoTable({
+      startY: 23,
+      head: [['TPS', '1. Abdul Darip', '2. H. Nurdin', '3. Rosada', '4. Masdi Enjin',
+              'Suara Sah', 'Tidak Sah', 'Total', 'DPT', 'Abstain']],
+      body: body,
+      foot: foot,
+      theme: 'grid',
+      styles: { fontSize: 8, cellPadding: 1.6, halign: 'center', lineColor: [187,187,187], lineWidth: 0.1 },
+      headStyles: { fillColor: [44,62,80], textColor: 255, fontSize: 8 },
+      footStyles: { fillColor: [44,62,80], textColor: 255, fontStyle: 'bold' },
+      columnStyles: { 0: { halign: 'left', cellWidth: 20 } },
+      margin: { left: 10, right: 10, top: 23 },
+      didDrawPage: function () {
+        const pageCount = doc.internal.getNumberOfPages();
+        doc.setFontSize(8);
+        doc.text('Halaman ' + doc.internal.getCurrentPageInfo().pageNumber + ' dari ' + pageCount,
+                 doc.internal.pageSize.getWidth() - 10, doc.internal.pageSize.getHeight() - 5, { align: 'right' });
+      }
+    });
+
+    doc.save('Rekap-Suara-TPS-Sriamur.pdf');
   }
 </script>
-
 </body>
   </html>
