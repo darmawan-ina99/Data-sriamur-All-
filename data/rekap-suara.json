@@ -1,0 +1,582 @@
+{
+  "judul": "Rekap Suara Per TPS - Desa Sriamur",
+  "kandidat": [
+    "Abdul Darip",
+    "H. Nurdin",
+    "Rosada",
+    "Masdi Enjin"
+  ],
+  "tps": [
+    {
+      "tps": "TPS 01",
+      "kandidat": {
+        "1. Abdul Darip": "39",
+        "2. H. Nurdin": "26",
+        "3. Rosada": "4",
+        "4. Masdi Enjin": "294"
+      },
+      "suara_sah": "363",
+      "suara_tidak_sah": "1",
+      "total": "364",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 02",
+      "kandidat": {
+        "1. Abdul Darip": "166",
+        "2. H. Nurdin": "146",
+        "3. Rosada": "5",
+        "4. Masdi Enjin": "153"
+      },
+      "suara_sah": "470",
+      "suara_tidak_sah": "11",
+      "total": "481",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 03",
+      "kandidat": {
+        "1. Abdul Darip": "248",
+        "2. H. Nurdin": "73",
+        "3. Rosada": "2",
+        "4. Masdi Enjin": "156"
+      },
+      "suara_sah": "479",
+      "suara_tidak_sah": "10",
+      "total": "489",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 04",
+      "kandidat": {
+        "1. Abdul Darip": "180",
+        "2. H. Nurdin": "127",
+        "3. Rosada": "16",
+        "4. Masdi Enjin": "141"
+      },
+      "suara_sah": "464",
+      "suara_tidak_sah": "2",
+      "total": "466",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 05",
+      "kandidat": {
+        "1. Abdul Darip": "103",
+        "2. H. Nurdin": "210",
+        "3. Rosada": "6",
+        "4. Masdi Enjin": "154"
+      },
+      "suara_sah": "473",
+      "suara_tidak_sah": "9",
+      "total": "482",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 06",
+      "kandidat": {
+        "1. Abdul Darip": "49",
+        "2. H. Nurdin": "238",
+        "3. Rosada": "26",
+        "4. Masdi Enjin": "81"
+      },
+      "suara_sah": "394",
+      "suara_tidak_sah": "14",
+      "total": "408",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 07",
+      "kandidat": {
+        "1. Abdul Darip": "50",
+        "2. H. Nurdin": "182",
+        "3. Rosada": "5",
+        "4. Masdi Enjin": "148"
+      },
+      "suara_sah": "385",
+      "suara_tidak_sah": "11",
+      "total": "396",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 08",
+      "kandidat": {
+        "1. Abdul Darip": "62",
+        "2. H. Nurdin": "176",
+        "3. Rosada": "9",
+        "4. Masdi Enjin": "191"
+      },
+      "suara_sah": "438",
+      "suara_tidak_sah": "1",
+      "total": "439",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 09",
+      "kandidat": {
+        "1. Abdul Darip": "112",
+        "2. H. Nurdin": "108",
+        "3. Rosada": "13",
+        "4. Masdi Enjin": "142"
+      },
+      "suara_sah": "375",
+      "suara_tidak_sah": "5",
+      "total": "380",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 10",
+      "kandidat": {
+        "1. Abdul Darip": "91",
+        "2. H. Nurdin": "195",
+        "3. Rosada": "23",
+        "4. Masdi Enjin": "162"
+      },
+      "suara_sah": "471",
+      "suara_tidak_sah": "9",
+      "total": "480",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 11",
+      "kandidat": {
+        "1. Abdul Darip": "98",
+        "2. H. Nurdin": "210",
+        "3. Rosada": "7",
+        "4. Masdi Enjin": "135"
+      },
+      "suara_sah": "450",
+      "suara_tidak_sah": "7",
+      "total": "457",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 12",
+      "kandidat": {
+        "1. Abdul Darip": "75",
+        "2. H. Nurdin": "236",
+        "3. Rosada": "21",
+        "4. Masdi Enjin": "112"
+      },
+      "suara_sah": "444",
+      "suara_tidak_sah": "6",
+      "total": "450",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 13",
+      "kandidat": {
+        "1. Abdul Darip": "43",
+        "2. H. Nurdin": "312",
+        "3. Rosada": "18",
+        "4. Masdi Enjin": "94"
+      },
+      "suara_sah": "467",
+      "suara_tidak_sah": "3",
+      "total": "470",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 14",
+      "kandidat": {
+        "1. Abdul Darip": "86",
+        "2. H. Nurdin": "220",
+        "3. Rosada": "2",
+        "4. Masdi Enjin": "59"
+      },
+      "suara_sah": "367",
+      "suara_tidak_sah": "4",
+      "total": "371",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 15",
+      "kandidat": {
+        "1. Abdul Darip": "60",
+        "2. H. Nurdin": "149",
+        "3. Rosada": "9",
+        "4. Masdi Enjin": "100"
+      },
+      "suara_sah": "318",
+      "suara_tidak_sah": "4",
+      "total": "322",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 16",
+      "kandidat": {
+        "1. Abdul Darip": "111",
+        "2. H. Nurdin": "88",
+        "3. Rosada": "8",
+        "4. Masdi Enjin": "127"
+      },
+      "suara_sah": "334",
+      "suara_tidak_sah": "1",
+      "total": "335",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 17",
+      "kandidat": {
+        "1. Abdul Darip": "123",
+        "2. H. Nurdin": "223",
+        "3. Rosada": "47",
+        "4. Masdi Enjin": "73"
+      },
+      "suara_sah": "466",
+      "suara_tidak_sah": "5",
+      "total": "471",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 18",
+      "kandidat": {
+        "1. Abdul Darip": "199",
+        "2. H. Nurdin": "199",
+        "3. Rosada": "19",
+        "4. Masdi Enjin": "63"
+      },
+      "suara_sah": "480",
+      "suara_tidak_sah": "4",
+      "total": "484",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 19",
+      "kandidat": {
+        "1. Abdul Darip": "241",
+        "2. H. Nurdin": "158",
+        "3. Rosada": "7",
+        "4. Masdi Enjin": "44"
+      },
+      "suara_sah": "450",
+      "suara_tidak_sah": "10",
+      "total": "460",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 20",
+      "kandidat": {
+        "1. Abdul Darip": "205",
+        "2. H. Nurdin": "72",
+        "3. Rosada": "23",
+        "4. Masdi Enjin": "73"
+      },
+      "suara_sah": "373",
+      "suara_tidak_sah": "9",
+      "total": "382",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 21",
+      "kandidat": {
+        "1. Abdul Darip": "290",
+        "2. H. Nurdin": "34",
+        "3. Rosada": "33",
+        "4. Masdi Enjin": "97"
+      },
+      "suara_sah": "454",
+      "suara_tidak_sah": "12",
+      "total": "466",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 22",
+      "kandidat": {
+        "1. Abdul Darip": "206",
+        "2. H. Nurdin": "23",
+        "3. Rosada": "22",
+        "4. Masdi Enjin": "182"
+      },
+      "suara_sah": "433",
+      "suara_tidak_sah": "44",
+      "total": "477",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 23",
+      "kandidat": {
+        "1. Abdul Darip": "151",
+        "2. H. Nurdin": "17",
+        "3. Rosada": "55",
+        "4. Masdi Enjin": "202"
+      },
+      "suara_sah": "425",
+      "suara_tidak_sah": "7",
+      "total": "432",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 24",
+      "kandidat": {
+        "1. Abdul Darip": "121",
+        "2. H. Nurdin": "77",
+        "3. Rosada": "29",
+        "4. Masdi Enjin": "168"
+      },
+      "suara_sah": "395",
+      "suara_tidak_sah": "21",
+      "total": "416",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 25",
+      "kandidat": {
+        "1. Abdul Darip": "334",
+        "2. H. Nurdin": "12",
+        "3. Rosada": "60",
+        "4. Masdi Enjin": "38"
+      },
+      "suara_sah": "444",
+      "suara_tidak_sah": "7",
+      "total": "451",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 26",
+      "kandidat": {
+        "1. Abdul Darip": "118",
+        "2. H. Nurdin": "118",
+        "3. Rosada": "37",
+        "4. Masdi Enjin": "155"
+      },
+      "suara_sah": "428",
+      "suara_tidak_sah": "9",
+      "total": "437",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 27",
+      "kandidat": {
+        "1. Abdul Darip": "199",
+        "2. H. Nurdin": "107",
+        "3. Rosada": "58",
+        "4. Masdi Enjin": "98"
+      },
+      "suara_sah": "462",
+      "suara_tidak_sah": "4",
+      "total": "466",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 28",
+      "kandidat": {
+        "1. Abdul Darip": "162",
+        "2. H. Nurdin": "119",
+        "3. Rosada": "42",
+        "4. Masdi Enjin": "156"
+      },
+      "suara_sah": "479",
+      "suara_tidak_sah": "13",
+      "total": "492",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 29",
+      "kandidat": {
+        "1. Abdul Darip": "187",
+        "2. H. Nurdin": "75",
+        "3. Rosada": "97",
+        "4. Masdi Enjin": "96"
+      },
+      "suara_sah": "455",
+      "suara_tidak_sah": "3",
+      "total": "458",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 30",
+      "kandidat": {
+        "1. Abdul Darip": "172",
+        "2. H. Nurdin": "95",
+        "3. Rosada": "74",
+        "4. Masdi Enjin": "146"
+      },
+      "suara_sah": "487",
+      "suara_tidak_sah": "6",
+      "total": "493",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 31",
+      "kandidat": {
+        "1. Abdul Darip": "202",
+        "2. H. Nurdin": "87",
+        "3. Rosada": "42",
+        "4. Masdi Enjin": "109"
+      },
+      "suara_sah": "440",
+      "suara_tidak_sah": "12",
+      "total": "452",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 32",
+      "kandidat": {
+        "1. Abdul Darip": "204",
+        "2. H. Nurdin": "131",
+        "3. Rosada": "53",
+        "4. Masdi Enjin": "84"
+      },
+      "suara_sah": "472",
+      "suara_tidak_sah": "5",
+      "total": "477",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 33",
+      "kandidat": {
+        "1. Abdul Darip": "124",
+        "2. H. Nurdin": "20",
+        "3. Rosada": "130",
+        "4. Masdi Enjin": "51"
+      },
+      "suara_sah": "406",
+      "suara_tidak_sah": "6",
+      "total": "412",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 34",
+      "kandidat": {
+        "1. Abdul Darip": "121",
+        "2. H. Nurdin": "95",
+        "3. Rosada": "50",
+        "4. Masdi Enjin": "120"
+      },
+      "suara_sah": "386",
+      "suara_tidak_sah": "13",
+      "total": "399",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 35",
+      "kandidat": {
+        "1. Abdul Darip": "83",
+        "2. H. Nurdin": "18",
+        "3. Rosada": "91",
+        "4. Masdi Enjin": "113"
+      },
+      "suara_sah": "386",
+      "suara_tidak_sah": "14",
+      "total": "400",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 36",
+      "kandidat": {
+        "1. Abdul Darip": "129",
+        "2. H. Nurdin": "114",
+        "3. Rosada": "38",
+        "4. Masdi Enjin": "91"
+      },
+      "suara_sah": "372",
+      "suara_tidak_sah": "9",
+      "total": "381",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 37",
+      "kandidat": {
+        "1. Abdul Darip": "100",
+        "2. H. Nurdin": "152",
+        "3. Rosada": "8",
+        "4. Masdi Enjin": "135"
+      },
+      "suara_sah": "395",
+      "suara_tidak_sah": "10",
+      "total": "405",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 38",
+      "kandidat": {
+        "1. Abdul Darip": "102",
+        "2. H. Nurdin": "208",
+        "3. Rosada": "4",
+        "4. Masdi Enjin": "111"
+      },
+      "suara_sah": "425",
+      "suara_tidak_sah": "11",
+      "total": "436",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 39",
+      "kandidat": {
+        "1. Abdul Darip": "95",
+        "2. H. Nurdin": "113",
+        "3. Rosada": "51",
+        "4. Masdi Enjin": "65"
+      },
+      "suara_sah": "378",
+      "suara_tidak_sah": "8",
+      "total": "386",
+      "dpt": null,
+      "abstain": null
+    },
+    {
+      "tps": "TPS 40",
+      "kandidat": {
+        "1. Abdul Darip": "137",
+        "2. H. Nurdin": "95",
+        "3. Rosada": "91",
+        "4. Masdi Enjin": "42"
+      },
+      "suara_sah": "383",
+      "suara_tidak_sah": "14",
+      "total": "397",
+      "dpt": null,
+      "abstain": null
+    }
+  ],
+  "total": {
+    "suara_sah": "16.966",
+    "suara_tidak_sah": "354",
+    "total": "17.320",
+    "kandidat": {
+      "1. Abdul Darip": "5.578",
+      "2. H. Nurdin": "5.410",
+      "3. Rosada": "1.017",
+      "4. Masdi Enjin": "4.961"
+    }
+  }
+}
