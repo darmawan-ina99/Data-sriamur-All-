@@ -55,7 +55,7 @@
     background: #fff;
     color: #000;
   }
-  #btnPdf {
+  #btnPdf, #btnBackup, #btnRestore {
     margin-top: 12px;
     padding: 10px 18px;
     font-size: 14px;
@@ -66,7 +66,11 @@
     border-radius: 6px;
     cursor: pointer;
   }
-  #btnPdf:hover { background: #1a252f; }
+  #btnPdf:hover, #btnBackup:hover, #btnRestore:hover { background: #1a252f; }
+  #btnBackup { margin-left: 8px; background: #27ae60; }
+  #btnBackup:hover { background: #1e8449; }
+  #btnRestore { margin-left: 8px; background: #8e44ad; }
+  #btnRestore:hover { background: #6c3483; }
   .note {
     margin-top: 12px;
     font-size: 12px;
@@ -165,6 +169,9 @@
 </div>
 
 <button id="btnPdf" onclick="unduhPdf()">\u2913 Download PDF</button>
+<button id="btnBackup" onclick="backupData()">\u2913 Backup Data</button>
+<button id="btnRestore" onclick="document.getElementById('fileRestore').click()">\u21c4 Muat Backup</button>
+<input type="file" id="fileRestore" accept=".json" style="display:none" onchange="restoreData(this)">
 
 <div class="note">
   <b>Rumus:</b> Abstain = DPT − (Suara Sah + Suara Tidak Sah).<br>
@@ -231,6 +238,50 @@
     const totalSah = 16966, totalTidakSah = 354;
     let abstain = totalDPT - (totalSah + totalTidakSah);
     elAbstain.textContent = abstain < 0 ? 'cek DPT' : abstain.toLocaleString('id-ID');
+  }
+
+  // Backup: unduh file JSON berisi DPT + abstain (bisa dipakai pindah perangkat)
+  function backupData() {
+    const data = { disimpan: new Date().toISOString(), dpt: {} };
+    document.querySelectorAll('#tabelRekap tbody tr').forEach(tr => {
+      const tps = tr.cells[0].textContent.trim();
+      const inp = tr.querySelector('td.dpt input');
+      if (inp && inp.value !== '') {
+        data.dpt[tps] = { dpt: inp.value, abstain: tr.querySelector('.abstain').textContent };
+      }
+    });
+    data.totalDPT = document.getElementById('totalDPT').textContent;
+    data.totalAbstain = document.getElementById('totalAbstain').textContent;
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'backup-dpt-sriamur.json';
+    a.click();
+  }
+
+  // Restore: muat file backup JSON ke tabel
+  function restoreData(input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data = JSON.parse(e.target.result);
+        Object.entries(data.dpt || {}).forEach(([tps, v]) => {
+          const tr = [...document.querySelectorAll('#tabelRekap tbody tr')].find(r => r.cells[0].textContent.trim() === tps);
+          if (tr) {
+            const inp = tr.querySelector('td.dpt input');
+            inp.value = v.dpt;
+            hitung(inp);
+          }
+        });
+        updateTotalDPT();
+        simpanDPT();
+        alert('Backup berhasil dimuat: ' + Object.keys(data.dpt || {}).length + ' TPS');
+      } catch (err) { alert('File backup tidak valid.'); }
+    };
+    reader.readAsText(file);
+    input.value = '';
   }
 
   // Download PDF - tabel digenerate ulang sebagai tabel PDF asli,
